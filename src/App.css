@@ -1,0 +1,36 @@
+.fondo-formulario {
+  background-color: #87ceeb;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 0 0 0 0 !important;
+  color: var(--bs-card-color);
+}
+
+.color-box {
+  width: 130px;
+  height: 90px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+  .color-box {
+    width: 90px;
+    height: 45px;
+  }
+}
+
+.card-item {
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.color-box-card {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
