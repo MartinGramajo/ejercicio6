@@ -56,7 +56,7 @@ const FormularioColores = () => {
           </Form>
         </Card.Body>
       </Card>
-      <ListaDeColores />
+      <ListaDeColores listaColores={listaColores} />
     </Container>
   );
 };
