@@ -24,6 +24,8 @@
 
 .card-item {
   width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .color-box-card {

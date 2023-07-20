@@ -1,15 +1,15 @@
 import { Button, Card } from "react-bootstrap";
 
-const ItemCardColor = () => {
+const ItemCardColor = ({ color }) => {
   return (
     <Card className="card-item">
-      <Card.Header className="py-4">Nombre color</Card.Header>
+      <Card.Header className="py-4">{color}</Card.Header>
       <Card.Body className="fondo-formulario">
         <div className="d-flex justify-content-center py-5  ">
           <div
             className="color-box-card"
             style={{
-              backgroundColor: `red`,
+              backgroundColor: `${color}`,
             }}
           ></div>
         </div>
