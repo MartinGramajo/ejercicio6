@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Container, Form, InputGroup } from "react-bootstrap";
+import ListaDeColores from "./ListaDeColores";
 let coloresIniciales = JSON.parse(localStorage.getItem("colores")) || [];
 
 const FormularioColores = () => {
@@ -48,17 +49,14 @@ const FormularioColores = () => {
               </InputGroup>
             </div>
             <Card.Footer className="d-flex  justify-content-end pt-4 bg-white ">
-              <Button
-                className="btn-agregar-tarea"
-                variant="outline-primary"
-                type="submit"
-              >
+              <Button variant="outline-primary" type="submit">
                 Guardar
               </Button>
             </Card.Footer>
           </Form>
         </Card.Body>
       </Card>
+      <ListaDeColores />
     </Container>
   );
 };
