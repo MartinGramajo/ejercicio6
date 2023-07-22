@@ -8,6 +8,7 @@ Estas Lista de colores quedan guardadas de manera local en nuestro navegador.
 - React
 - React-Bootstrap
 - FontAwesome
+- sweetalert2
 
 ## Requisitos ✅
 
