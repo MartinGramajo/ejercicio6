@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Container, Form, InputGroup } from "react-bootstrap";
 import ListaDeColores from "./ListaDeColores";
+import Swal from "sweetalert2";
 let coloresIniciales = JSON.parse(localStorage.getItem("colores")) || [];
 
 const FormularioColores = () => {
@@ -22,14 +23,39 @@ const FormularioColores = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setListaColores([...listaColores, color]);
+    if (listaColores <= 1) {
+      Swal.fire({
+        icon: "success",
+        title: "color guardado correctamente",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "No se pudo guardar su color.",
+      });
+    }
     setColor("");
   };
 
   const deleteColor = (colorBorrar) => {
-    let listaColoresFiltrada = listaColores.filter(
-      (itemColor) => itemColor !== colorBorrar
-    );
-    setListaColores(listaColoresFiltrada);
+    Swal.fire({
+      title: "Estas seguro que quieres borrar la pelicula?",
+      showDenyButton: true,
+      confirmButtonText: "Si",
+      denyButtonText: `no`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Color borrado", "", "success");
+        let listaColoresFiltrada = listaColores.filter(
+          (itemColor) => itemColor !== colorBorrar
+        );
+        setListaColores(listaColoresFiltrada);
+      } else if (result.isDenied) {
+        Swal.fire("No se borro el color ✅", "", "info");
+      }
+    });
   };
 
   return (
